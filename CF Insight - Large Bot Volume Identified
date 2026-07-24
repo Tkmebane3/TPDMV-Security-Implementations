@@ -1,0 +1,25 @@
+# The Play - Bot Fight Mode Implementation 05/09/26
+
+## Summary
+A security scan was ran from Cloudflare Security Center, which reported that **Bot Fight Mode** was not enabled for `theplaydmv.app`. The finding indicated that the application was not utilizing Cloudflare's automated bot detection and mitigation capabilities to identify malicious or suspicious automated traffic. This causes concern due to bot traffic introducing a DoS attack risk as well as general online scanner traffic for enumeration purposes. 
+
+Bot Fight Mode was enabled within Cloudflare to strengthen the application's ability to detect and disrupt automated reconnaissance and malicious bot activity before requests reached the origin server and mitigate DoS risks.
+
+## Security Implementation
+- Reviewed Cloudflare **Bot Fight Mode** configuration.
+- Enabled **Bot Fight Mode** within Cloudflare.
+
+## Outcome
+After a month, Cloudflare security insights revealed a notable drop in requests.
+
+## How This Strengthens Security Posture
+Automated bots are commonly used during the early stages of cyber attacks to identify vulnerable applications and exposed resources. Typical malicious bot activity includes:
+- Directory and endpoint enumeration
+- Credential stuffing attacks
+- Brute force login attempts
+- Vulnerability scanning
+- Exploitation of known CVEs
+- Content scraping
+- Distributed reconnaissance
+
+Bot Fight Mode analyzes incoming requests using Cloudflare's threat intelligence and behavioral analysis to identify automated traffic. Malicious requests may be challenged, rate limited, or blocked before reaching the origin server, reducing unnecessary load while limiting attacker reconnaissance opportunities.By filtering malicious automation at the edge, the application reduces its exposure to common web-based attacks and preserves server resources for legitimate users.
