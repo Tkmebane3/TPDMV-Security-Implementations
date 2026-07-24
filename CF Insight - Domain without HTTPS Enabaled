@@ -1,0 +1,29 @@
+# The Play - HTTPS Redirect Validation 04/12/26
+
+## Summary
+A security scan was ran from Cloudflare Security Center, it was reported that **"Always Use HTTPS"** was not enabled for `theplaydmv.app`, indicating a potential insecure configuration that could allow users to access the application over unencrypted HTTP.
+
+Manual validation was performed to verify the reported finding. Testing confirmed that HTTP requests were automatically redirected to HTTPS, indicating that HTTPS enforcement was functioning as expected despite the Cloudflare insight.
+
+## Security Implementation
+- Reviewed Cloudflare **Always Use HTTPS** configuration.
+- Enabled the feature within Cloudflare.
+- Performed manual validation by navigating to:
+
+http://theplaydmv.app
+
+- Confirmed automatic redirection to:
+
+https://theplaydmv.app
+
+- Determined the security control was operating correctly and the Cloudflare finding was likely stale or associated with a different hostname.
+
+## How This Strengthens Security Posture
+HTTPS encrypts communication between a client and the web server using Transport Layer Security (TLS). Without HTTPS enforcement, users who manually enter an HTTP URL or follow an insecure link could establish an unencrypted connection, exposing traffic to risks including:
+- Man-in-the-Middle (MITM) attacks
+- Credential interception
+- Session hijacking
+- Protocol downgrade attacks
+- Loss of confidentiality and integrity
+
+Automatic HTTP-to-HTTPS redirection reduces this attack surface by ensuring clients are immediately redirected to an encrypted connection.
