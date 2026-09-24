@@ -61,4 +61,6 @@ The application now accepts only TLS 1.2 and TLS 1.3 connections.
 Security posture reviews can identify weaknesses that are not visible at the application-code level.
 Transport-layer configuration should be reviewed periodically alongside application security controls because strong application logic can still be undermined by weak infrastructure or protocol settings.
 
+![alt text](9.23OldTLSVersion.png)
+
 
